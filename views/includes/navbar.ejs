@@ -1,0 +1,76 @@
+<style>
+    .search-btn{
+        background-color: #fe424d;
+        color: white;
+        border-radius: 2.5rem;
+        padding: 0 1rem 0 1rem;
+        border: none;
+    }
+    .search-btn:hover{
+        background-color: #fe424d;
+        color: white;
+    }
+    .search-btn i {
+        display: inline;
+        margin-right: 0.5rem;
+    }
+    .search-inp{
+        border: 1.3px solid #fe424d;
+        border-radius: 25px;
+        padding: 0.5rem 3rem 0.5rem 3rem;
+    }
+</style>
+
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand nav-icon " href="/listings"><i class="fa-solid fa-hotel"></i>
+            <h3 style="display: inline-block;" class="ms-2">Wander Nest</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-white" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-3">
+                <a class="nav-link" href="/listings">Explore Nests</a>
+            </div>
+
+
+            <!-- <div class="navbar-nav ms-auto">
+                <form class="d-flex" role="search">
+                    <input class="form-control-sm me-2 search-inp" type="search" placeholder="Search Destination" aria-label="Search">
+                    <button class="btn-sm search-btn  " type="submit"><i class="fa-solid fa-magnifying-glass" ></i></button>
+                </form>
+            </div> -->
+
+
+            <div class="navbar-nav ms-auto">
+                <!-- currUser is set in middleware -->
+
+                <% if(currUser){ %>
+                    <b class="m-auto" style="color: #fe424d;">
+                        <%= currUser.name %>
+                    </b>
+                    <% } %>
+
+                        <a class="nav-link mx-3" href="/listings/new">
+                            Add New Nest
+                        </a>
+                        
+                        <% if(!currUser){ %>
+
+                            <!-- <i class="fa-solid fa-user m-auto mx-3" style="color: #fe424d;font-size: 1.5rem;"></i> -->
+                            <a class="nav-link active" aria-current="page" href="/signup"><b>Signup</b></a>
+                            <a class="nav-link" href="/login"><b>Login</b></a>
+
+
+                            <% } %>
+                                <% if(currUser){ %>
+                                    <a class="nav-link ms-3" href="/logout"><b>Logout</b> <i
+                                            class="fa-solid fa-right-from-bracket" style="color: #fe424d;"></i></a>
+                                    <% } %>
+
+            </div>
+        </div>
+    </div>
+</nav>

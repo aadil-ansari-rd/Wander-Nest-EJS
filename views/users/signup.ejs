@@ -1,0 +1,65 @@
+<%- layout("/layouts/boilerplate") %>
+
+    <body>
+
+
+        <div class="row">
+            <div class="col-6 offset-3 my-4">
+                <h3>Signup User</h3>
+
+                <form action="/signup" method="post" novalidate class="needs-validation">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name </label>
+                        <input required class="form-control" type="text" name="name" id="name"
+                            placeholder="Enter title">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Location must be valid.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username </label>
+                        <input required class="form-control" type="text" name="username" id="username"
+                            placeholder="Enter title">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Location must be valid.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email </label>
+                        <input required class="form-control" type="email" name="email" id="email"
+                            placeholder="Enter title">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Location must be valid.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password </label>
+                        <input required class="form-control" type="password" name="password" id="password"
+                            placeholder="Enter title">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Location must be valid.
+                        </div>
+                    </div>
+                    
+                    
+
+                    <button type="submit" class="btn btn-dark listing-btn">Signup</button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </body>
